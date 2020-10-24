@@ -118,73 +118,54 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView"
+                android:id="@+id/lightbulb_imgvw"
                 android:layout_width="52dp"
                 android:layout_height="46dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="60dp"
-                android:layout_marginRight="60dp"
                 android:src="@drawable/ic_lightbulb"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/appCompatImageView3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
-                app:layout_constraintVertical_bias="0.375" />
+                tools:layout_editor_absoluteX="29dp"
+                tools:layout_editor_absoluteY="72dp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/appCompatImageView3"
                 android:layout_width="52dp"
                 android:layout_height="47dp"
-                android:layout_marginEnd="44dp"
-                android:layout_marginRight="44dp"
                 android:src="@drawable/ic_monetization_on"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/games_imgvw"
-                app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_monetization_on" />
+                app:srcCompat="@drawable/ic_monetization_on"
+                tools:layout_editor_absoluteX="157dp"
+                tools:layout_editor_absoluteY="73dp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/games_imgvw"
                 android:layout_width="51dp"
                 android:layout_height="45dp"
-                android:layout_marginStart="44dp"
-                android:layout_marginLeft="44dp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
-                app:layout_constraintTop_toTopOf="@+id/appCompatImageView3"
-                app:srcCompat="@drawable/ic_games" />
+                app:srcCompat="@drawable/ic_games"
+                tools:layout_editor_absoluteX="245dp"
+                tools:layout_editor_absoluteY="71dp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/seeAll_imgvw"
                 android:layout_width="51dp"
                 android:layout_height="51dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginEnd="36dp"
-                android:layout_marginRight="36dp"
                 android:src="@drawable/ic_more_horiz"
-                app:layout_constraintBottom_toTopOf="@+id/seeAll_txtvw"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+                tools:layout_editor_absoluteX="324dp"
+                tools:layout_editor_absoluteY="62dp" />
 
             <TextView
                 android:id="@+id/electric_imgvw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Electric"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
-                app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
-                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toEndOf="@+id/lightbulb_imgvw"
+                app:layout_constraintStart_toStartOf="@+id/lightbulb_imgvw"
+                tools:layout_editor_absoluteY="116dp" />
 
             <TextView
                 android:id="@+id/cashout_imgvw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="Cashout"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/appCompatImageView3"
                 app:layout_constraintStart_toStartOf="@+id/appCompatImageView3"
                 app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
@@ -194,7 +175,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
+                android:layout_marginBottom="8dp"
                 android:text="Games"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/games_imgvw"
                 app:layout_constraintStart_toStartOf="@+id/games_imgvw"
                 app:layout_constraintTop_toBottomOf="@+id/games_imgvw" />
@@ -203,7 +186,9 @@
                 android:id="@+id/seeAll_txtvw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="See All"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/seeAll_imgvw"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/seeAll_imgvw"
@@ -218,7 +203,8 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:paddingTop="10dp"
-        android:paddingBottom="10dp">
+        android:paddingBottom="10dp"
+        app:singleSelection="true">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/noDiscount_btntog"
@@ -302,6 +288,7 @@
                 app:layout_constraintStart_toEndOf="@+id/product1_cbx">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/product1_edtxt"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="100dp"
                     android:layout_height="match_parent" />
@@ -323,11 +310,33 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/product2_edtxt"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="157dp"
+                android:layout_marginLeft="157dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product3_cbx"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/product3_edtxt"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -347,27 +356,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/product4_edtxt"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout3"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="157dp"
-                android:layout_marginLeft="157dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginRight="14dp"
-                android:gravity="end"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/product3_cbx"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="100dp"
                     android:layout_height="match_parent" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -413,19 +403,27 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="69dp"
+            android:layout_marginLeft="69dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="24dp"
             android:text="Total: "
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="260dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/total_txtvw"
+            app:layout_constraintStart_toEndOf="@+id/calculate_btn" />
 
         <TextView
             android:id="@+id/total_txtvw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="42dp"
+            android:layout_marginRight="42dp"
             android:text="$00.00"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-            tools:layout_editor_absoluteX="325dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
 </ScrollView>
