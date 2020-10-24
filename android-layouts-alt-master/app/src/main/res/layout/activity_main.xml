@@ -1,11 +1,431 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/grey_200">
+    android:layout_height="match_parent">
 
     <!-- TODO 01. Define the layout for the MainActivity here. -->
     <!-- NOTE: Remember that in order to include some GUI components you will have to use the Material library -->
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_50">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.google.android.material.chip.ChipGroup
+            style="@style/Chip.Blue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+
+            <com.google.android.material.chip.Chip
+                style="@style/Chip.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scan"
+                app:chipIcon="@drawable/ic_center_focus_weak_chip" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Chip.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top Up"
+                app:chipIcon="@drawable/ic_add_circle_outline_chip" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Chip.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                app:chipIcon="@drawable/ic_open_in_new_chip" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Chip.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request"
+                app:chipIcon="@drawable/ic_open_in_new_rotated_chip" />
+        </com.google.android.material.chip.ChipGroup>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/CardView.White"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="52dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_phone_android"
+                app:layout_constraintEnd_toStartOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/dataTitle_txtv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="170dp"
+                android:layout_marginRight="170dp"
+                android:text="Pulsa &amp; Data"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="123dp"
+                android:layout_marginRight="123dp"
+                android:text="Bonus pulsa 50%"
+                android:textColor="#E81313"
+                app:layout_constraintEnd_toStartOf="@+id/materialButton"
+                app:layout_constraintTop_toBottomOf="@+id/dataTitle_txtv" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/materialButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="18dp"
+                android:text="BUY NOW"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="52dp"
+                android:layout_height="46dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="60dp"
+                android:layout_marginRight="60dp"
+                android:src="@drawable/ic_lightbulb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/appCompatImageView3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2"
+                app:layout_constraintVertical_bias="0.375" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView3"
+                android:layout_width="52dp"
+                android:layout_height="47dp"
+                android:layout_marginEnd="44dp"
+                android:layout_marginRight="44dp"
+                android:src="@drawable/ic_monetization_on"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/games_imgvw"
+                app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_monetization_on" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/games_imgvw"
+                android:layout_width="51dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+                app:layout_constraintTop_toTopOf="@+id/appCompatImageView3"
+                app:srcCompat="@drawable/ic_games" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/seeAll_imgvw"
+                android:layout_width="51dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:src="@drawable/ic_more_horiz"
+                app:layout_constraintBottom_toTopOf="@+id/seeAll_txtvw"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+
+            <TextView
+                android:id="@+id/electric_imgvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electric"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/appCompatImageView"
+                app:layout_constraintStart_toStartOf="@+id/appCompatImageView"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/cashout_imgvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cashout"
+                app:layout_constraintEnd_toEndOf="@+id/appCompatImageView3"
+                app:layout_constraintStart_toStartOf="@+id/appCompatImageView3"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView3" />
+
+            <TextView
+                android:id="@+id/games_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:text="Games"
+                app:layout_constraintEnd_toEndOf="@+id/games_imgvw"
+                app:layout_constraintStart_toStartOf="@+id/games_imgvw"
+                app:layout_constraintTop_toBottomOf="@+id/games_imgvw" />
+
+            <TextView
+                android:id="@+id/seeAll_txtvw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="See All"
+                app:layout_constraintEnd_toEndOf="@+id/seeAll_imgvw"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/seeAll_imgvw"
+                app:layout_constraintTop_toBottomOf="@+id/seeAll_imgvw" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/discountDecision_btntogGRP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/noDiscount_btntog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checkable="true"
+            android:text="NO DISCOUNT" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/discount_btntog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checkable="true"
+            android:text="DISCOUNT" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/invoice_crdvw"
+        style="@style/CardView.White"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/product2_cbx"
+                style="@style/CheckBox.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product 02"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout2"
+                app:layout_constraintStart_toStartOf="@+id/product1_cbx" />
+
+            <CheckBox
+                android:id="@+id/product1_cbx"
+                style="@style/CheckBox.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:text="Product 01"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/invoice_txtInLay" />
+
+            <CheckBox
+                android:id="@+id/product3_cbx"
+                style="@style/CheckBox.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product 03"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout3"
+                app:layout_constraintStart_toStartOf="@+id/product2_cbx" />
+
+            <CheckBox
+                android:id="@+id/product4_cbx"
+                style="@style/CheckBox.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product 04"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout4"
+                app:layout_constraintStart_toStartOf="@+id/product3_cbx" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="157dp"
+                android:layout_marginLeft="157dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="end"
+                app:layout_constraintBaseline_toBaselineOf="@+id/product1_cbx"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product1_cbx">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="157dp"
+                android:layout_marginLeft="157dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product2_cbx"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="157dp"
+                android:layout_marginLeft="157dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="49dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product4_cbx"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="157dp"
+                android:layout_marginLeft="157dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:gravity="end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/product3_cbx"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/invoice_txtInLay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="1dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@android:drawable/ic_popup_sync"
+                    android:gravity="start"
+                    android:hint="@string/invoice" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate_btn"
+            style="@style/Button.Outlined.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="CALCULATE TOTAL"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: "
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="260dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/total_txtvw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$00.00"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
+            tools:layout_editor_absoluteX="325dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 </ScrollView>
