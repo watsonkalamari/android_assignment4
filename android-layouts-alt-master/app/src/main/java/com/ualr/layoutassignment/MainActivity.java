@@ -11,33 +11,52 @@ import com.ualr.layoutassignment.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+
     // TODO 02. Create a new method called "calculateTotal" for calculating the invoice's total amount of money
-
-    public String calculateTotal(double prod1){
-
-        String returnedSum;
-        double sum;
-        sum=+prod1;
-       returnedSum= String.valueOf(sum);
-    return returnedSum;
+    public double calculateTotal(double value, double sum){
+        sum=sum+value;
+        return sum;
+    }
+    public double calculateDiscount(double sum){
+        return sum*0.75;
     }
     // TODO 03. Bind the "calculateTotal" method to the button with the "CALCULATE TOTAL" label
 
-    double product1;
+    //private static final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         final ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_main);
+        setContentView(binding.getRoot());
         super.onCreate(savedInstanceState);
 
 
         binding.calculateBtn.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view){
-                product1=Double.parseDouble(binding.product1Ed.getText().toString());
+            public void onClick(View view) {
 
-                binding.totalAmountVw.setText(calculateTotal(product1));
+                double sum=0.00;
+
+                if (binding.product1Cbx.isChecked()) {
+                   sum=calculateTotal(Double.parseDouble(binding.product1Ed.getText().toString()),sum);
+                }
+                if (binding.product2Cbx.isChecked()) {
+                    sum=calculateTotal(Double.parseDouble(binding.product2Ed.getText().toString()),sum);
+                }
+                if (binding.product3Cbx.isChecked()) {
+                    sum=calculateTotal(Double.parseDouble(binding.product3Ed.getText().toString()),sum);
+                }
+                if (binding.product4Cbx.isChecked()){
+                    sum=calculateTotal(Double.parseDouble(binding.product4Ed.getText().toString()),sum);
+                }
+
+                if(binding.discountBtntog.isChecked())
+                {
+                    sum=calculateDiscount(sum);
+                }
+
+               binding.totalAmountVw.setText(String.valueOf(sum));
             }
         });
 
