@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
     // TODO 03. Bind the "calculateTotal" method to the button with the "CALCULATE TOTAL" label
 
+    double product1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,21 +32,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
 
-
-
-
         binding.calculateBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                double prod1=0.0;
+                product1=Double.parseDouble(binding.product1Ed.getText().toString());
 
-                if(binding.product1Cbx.isChecked()==true)
-                {
-                    prod1= Double.valueOf(binding.product1Edtxt.getText().toString());
-
-                }
-             binding.totalAmountVw.setText(calculateTotal(prod1));
-
+                binding.totalAmountVw.setText(calculateTotal(product1));
             }
         });
 
